@@ -1,24 +1,82 @@
-# My Node.js CI/CD Task
 
-This is my solution for the DevOps internship Task 1: Automating a Node.js app deployment using GitHub Actions.
+# Node.js CI/CD Pipeline using GitHub Actions
 
-## What I Did
-- Built a simple Node.js app.
-- Dockerized it with a `Dockerfile`.
-- Set up a CI/CD pipeline to push it to DockerHub.
+This repository contains a simple Node.js web application that demonstrates a fully automated CI/CD pipeline using **GitHub Actions** and **Docker**.
 
-## How It Works
-1. Push code to the `main` branch.
-2. GitHub Actions builds the Docker image.
-3. The image is pushed to `mani628/nodejs-demo-app:latest`.
+## 🚀 Objective
 
-## Files
-- `index.js`: The Node.js application.
-- `Dockerfile`: Docker configuration.
-- `.github/workflows/main.yml`: CI/CD pipeline.
+To automate the process of building, testing, and deploying a Node.js application using GitHub Actions CI/CD pipeline and Docker.
 
-## How to Test
-Run this on any machine with Docker:
-```bash
-docker pull mani628/nodejs-demo-app:latest
-docker run -d -p 3000:3000 mani628/nodejs-demo-app:latest
+---
+
+## 🛠️ Tools & Technologies Used
+
+- **GitHub** – Source code hosting and version control
+- **GitHub Actions** – CI/CD automation
+- **Node.js** – Runtime environment for JavaScript
+- **Docker** – Containerization of the application
+- **DockerHub** – Container registry for Docker images
+
+---
+
+## 📁 Project Structure
+
+```
+├── index.js
+├── package.json
+├── Dockerfile
+└── .github
+    └── workflows
+        └── main.yml
+```
+
+---
+
+## ⚙️ GitHub Actions Workflow
+
+The CI/CD pipeline is defined in `.github/workflows/main.yml` and is triggered on every push to the `main` branch. Here's what it does:
+
+1. **Checkout Code** – Pulls the latest code from the repository
+2. **Set Up Node.js** – Installs Node.js environment
+3. **Install Dependencies** – Runs `npm install`
+4. **Run Tests** – Placeholder step for testing (`npm test`)
+5. **Build Docker Image** – Builds the application Docker image
+6. **Push Docker Image** – Pushes the Docker image to DockerHub
+
+---
+
+## 🔄 CI/CD Pipeline Steps
+
+- **Trigger:** On push to `main` branch
+- **Build:** Installs dependencies and builds the Docker image
+- **Test:** Placeholder test command (`npm test`)
+- **Deploy:** Docker image is pushed to DockerHub
+
+---
+
+## 🔧 How to Use
+
+1. Fork or clone the repository
+2. Set your **DockerHub credentials** as GitHub Repository Secrets:
+   - `DOCKER_USERNAME`
+   - `DOCKER_PASSWORD`
+3. Push code to `main` branch
+4. Watch the pipeline execute in GitHub Actions tab
+
+---
+
+## ✅ Result
+
+Every time code is pushed to `main`, the application is automatically built, tested, containerized, and the Docker image is pushed to DockerHub – **No manual steps required!**
+
+---
+
+## 📸 Screenshots
+
+*Refer to the screenshots in the repository for detailed results of each pipeline step.*
+
+---
+
+## 🙌 Acknowledgments
+
+Thanks to the mentors and community support that guided the completion of this task.
